@@ -22,11 +22,12 @@ function App() {
   }, [lista, listaCargada]);
 
   return (
-    <>
+    <main>
+      <h1 className='titulo-principal'>Lista de tareas pendientes</h1>
       <TaskForm lista={lista} setLista={setLista} />
-      <TaskList lista={lista} />
+      <TaskList lista={lista} setLista={setLista} />
       {lista.length === 0 && <h1>Todavía no hay tareas en la lista</h1>}
-    </>
+    </main>
   );
 }
 

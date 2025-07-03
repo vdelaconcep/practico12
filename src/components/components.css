@@ -1,0 +1,15 @@
+.taskform {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitulo {
+    color: #8473FF;
+    padding: 20px;
+    font-size: 2em;
+    font-weight: 500;
+}

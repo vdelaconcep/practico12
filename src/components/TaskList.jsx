@@ -1,9 +1,24 @@
-const TaskList = ({ lista }) => {
+import '@/components/components.css';
+
+const TaskList = ({ lista, setLista }) => {
+
+    const eliminar = (index) => {
+        const listaActualizada = [...lista];
+        listaActualizada.splice(index, 1);
+        setLista(listaActualizada)
+    }
+
     return (
         <>
-            <h1>TaskList</h1>
             {lista.map((elemento, index) => (
-                <div key={index}>{elemento}</div>
+                <div key={index}>
+                    {elemento}
+                    <button
+                        onClick={() => eliminar(index)}
+                    >
+                        X
+                    </button>
+                </div>
             ))}
         </>
     );

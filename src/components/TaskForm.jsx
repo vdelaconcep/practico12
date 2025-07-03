@@ -18,9 +18,9 @@ const TaskForm = ({ lista, setLista }) => {
             <form>
                 <textarea
                     type="text"
-                    placeholder="(máximo 140 caracteres)"
+                    placeholder="(máximo 50 caracteres)"
                     value={tarea}
-                    maxLength={140}
+                    maxLength={50}
                     onChange={(e) => setTarea(e.target.value)}
                     required
                 />

@@ -9,18 +9,24 @@ const TaskList = ({ lista, setLista }) => {
     }
 
     return (
-        <>
+        <section className='tasklist'>
             {lista.map((elemento, index) => (
-                <div key={index}>
+                <div
+                    className='items-lista'
+                    key={index}>
                     {elemento}
                     <button
+                        className='items-lista-boton'
                         onClick={() => eliminar(index)}
                     >
-                        X
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
             ))}
-        </>
+            <div>
+                {lista.length === 0 && <p>Todavía no hay tareas en la lista</p>}
+            </div>
+        </section>
     );
 };
 

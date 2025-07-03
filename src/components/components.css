@@ -1,5 +1,4 @@
 .taskform {
-    background-color: black;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -12,4 +11,43 @@
     padding: 20px;
     font-size: 2em;
     font-weight: 500;
+}
+
+.tasklist {
+    background-color: black;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.items-lista {
+    position: relative;
+    width: 230px;
+    height: 120px;
+    margin: 0 1.5% 25px 1.5%;
+    padding: 25px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #1A0091, #7100EA);
+    color: white;
+    font-size: 1.2em;
+    border-radius: 15px;
+    border: 2px solid #5A1FD0;
+}
+
+.items-lista-boton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 100;
+    background-color: transparent;
+    cursor: pointer;
 }

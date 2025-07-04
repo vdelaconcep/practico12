@@ -1,7 +1,18 @@
-import gatito from '@/assets/img/gato.png'
+import { useState, useEffect } from 'react';
+import gatito from '@/assets/img/gato.png';
 import '@/components/css/TaskList.css';
 
 const TaskList = ({ lista, setLista }) => {
+
+    // Estado para saber si la lista está vacia
+    const [listaVacia, setListaVacia] = useState(false);
+
+    //Effect para cambiar estado "listaVacia" cuando la lista se vacíe
+    useEffect(() => {
+        if (lista.length === 0) {
+            setTimeout(setListaVacia(true), 100)
+        } else setListaVacia(false)
+    },[lista, setListaVacia])
 
     // Función para eliminar una tarea de la lista por id
     const eliminar = (id, div) => {
@@ -37,7 +48,7 @@ const TaskList = ({ lista, setLista }) => {
                 </div>)
             )}
             <div className='lista-vacia-div'>
-                {lista.length === 0 && <>
+                {listaVacia && <>
                     <img className='lista-vacia-imagen' src={gatito} alt="Gatito" />
                     <h2 className='lista-vacia-titulo'>Todavía no hay tareas en la lista</h2>
                 </>

@@ -10,7 +10,7 @@ const TaskList = ({ lista, setLista }) => {
     //Effect para cambiar estado "listaVacia" cuando la lista se vacíe
     useEffect(() => {
         if (lista.length === 0) {
-            setTimeout(setListaVacia(true), 200)
+            setTimeout(setListaVacia(true), 500)
         } else setListaVacia(false)
     },[lista, setListaVacia])
 

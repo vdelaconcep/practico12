@@ -1,19 +1,23 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import '@/components/components.css';
+import '@/components/css/TaskForm.css';
 
 const TaskForm = ({ lista, setLista }) => {
+    // Estado para capturar dato del formulario
     const [tarea, setTarea] = useState("");
 
-    const handleGuardar = (e) => {
+    // Función para guardar tarea en la lista
+    const gestionarGuardado = (e) => {
         e.preventDefault();
         if (tarea.trim() === "") return;
 
+        // Constante que define tarea nueva con asignación de id
         const nuevaTarea = {
             id: uuidv4(),
             texto: tarea
         }
 
+        // Actualiza la lista de tareas (incorporando la tarea nueva) y limpia el estado "tarea"
         setLista([...lista, nuevaTarea]);
         setTarea("");
     };
@@ -22,7 +26,8 @@ const TaskForm = ({ lista, setLista }) => {
         <section className="taskform">
             <h3 className="subtitulo">Agregar una nueva tarea:</h3>
             <form>
-                <textarea
+                <input
+                    className="taskform-input"
                     type="text"
                     placeholder="(máximo 50 caracteres)"
                     value={tarea}
@@ -30,8 +35,11 @@ const TaskForm = ({ lista, setLista }) => {
                     onChange={(e) => setTarea(e.target.value)}
                     required
                 />
-                <button type="submit" onClick={handleGuardar}>
-                    Guardar
+                <button
+                    className="taskform-btn"
+                    type="submit"
+                    onClick={gestionarGuardado}>
+                    <i className="fa-solid fa-plus"></i>
                 </button>
             </form>
         </section>

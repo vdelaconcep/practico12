@@ -1,0 +1,31 @@
+.taskform {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.subtitulo {
+    color: #8473FF;
+    padding: 20px;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.taskform-input {
+    height: 40px;
+    min-width: 260px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+    font-size: 1em;
+}
+
+.taskform-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: #28FD9A;
+}

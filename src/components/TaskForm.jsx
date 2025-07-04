@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import '@/components/components.css';
 
 const TaskForm = ({ lista, setLista }) => {
@@ -8,7 +9,12 @@ const TaskForm = ({ lista, setLista }) => {
         e.preventDefault();
         if (tarea.trim() === "") return;
 
-        setLista([...lista, tarea]);
+        const nuevaTarea = {
+            id: uuidv4(),
+            texto: tarea
+        }
+
+        setLista([...lista, nuevaTarea]);
         setTarea("");
     };
 
